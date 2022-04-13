@@ -9,7 +9,7 @@ const { faker } = require('@faker-js/faker');
 const app = new Koa();
 const messagesObj = {
   status: 'ok',
-  timestame: new Date().getTime(),
+  timestamp: new Date().getTime(),
   messages: [],
 };
 
@@ -21,13 +21,14 @@ function newMessage() {
     'body': faker.lorem.paragraph(),
     'recieved': new Date().getTime(),
   }
+  messagesObj.timestamp = message.recieved;
   messagesObj.messages.push(message);
   console.log(message);
 } 
 
 const interval = setInterval(() => {
   newMessage()
-}, Math.floor(Math.random() * 100000));
+}, Math.floor(Math.random() * 10000));
 
 app.use(koaBody({
   urlencoded: true,
@@ -47,7 +48,7 @@ app.use(
 const router = new Router();
 
 router.get('/messages/unread', async (ctx) => {
-  ctx.response.body = messagesObj;
+  ctx.response.body = JSON.stringify(messagesObj);
   ctx.response.status = 200;
 });
 
