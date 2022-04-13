@@ -28,7 +28,7 @@ function newMessage() {
 
 const interval = setInterval(() => {
   newMessage()
-}, Math.floor(Math.random() * 10000));
+}, Math.floor(Math.random() * 100000));
 
 app.use(koaBody({
   urlencoded: true,
