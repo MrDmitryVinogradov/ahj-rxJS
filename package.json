@@ -22,14 +22,12 @@
   },
   "homepage": "https://github.com/MrDmitryVinogradov/ahj-rxJS-back#readme",
   "dependencies": {
+    "@faker-js/faker": "^6.1.2",
     "@koa/cors": "^3.2.0",
     "forever": "^4.0.3",
     "koa": "^2.13.4",
     "koa-body": "^4.2.0",
     "koa-router": "^10.1.1",
     "uniqid": "^5.4.0"
-  },
-  "devDependencies": {
-    "@faker-js/faker": "^6.1.2"
   }
 }
